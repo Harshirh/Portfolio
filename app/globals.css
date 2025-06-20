@@ -1,26 +1,415 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 10, 10, 20;
+  --background-end-rgb: 20, 20, 40;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px rgba(99, 102, 241, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(99, 102, 241, 0.5);
+  }
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(var(--foreground-rgb));
+  background: radial-gradient(
+      circle at top left,
+      rgb(var(--background-start-rgb)),
+      transparent
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgb(var(--background-end-rgb)),
+      transparent
+    ),
+    linear-gradient(to bottom right, #1a1a2e, #16213e, #1a1a2e);
+  min-height: 100vh;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+      45deg,
+      transparent 45%,
+      rgba(99, 102, 241, 0.03) 50%,
+      transparent 55%
+    ),
+    linear-gradient(
+      -45deg,
+      transparent 45%,
+      rgba(99, 102, 241, 0.03) 50%,
+      transparent 55%
+    );
+  background-size: 30px 30px;
+  pointer-events: none;
+}
+
+.container {
+  @apply mx-auto px-4 max-w-7xl;
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600;
+}
+
+.gradient-bg {
+  @apply bg-gradient-to-r from-blue-600 to-purple-600;
+}
+
+.hero-section {
+  @apply py-20 md:py-32;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(59, 130, 246, 0.1) 0%,
+    rgba(255, 255, 255, 0) 80%
+  );
+}
+
+/* Animated underline for links */
+.animated-underline {
+  @apply relative;
+}
+
+.animated-underline::after {
+  content: "";
+  @apply absolute w-0 h-0.5 bg-blue-600 bottom-0 left-0 transition-all duration-300;
+}
+
+.animated-underline:hover::after {
+  @apply w-full;
+}
+
+/* Button styles */
+.btn {
+  @apply inline-flex items-center justify-center rounded-full font-medium transition-colors duration-200;
+}
+
+.btn-primary {
+  @apply relative px-6 py-3 text-white rounded-full transition-all duration-300;
+  background: linear-gradient(-45deg, #4338ca, #6366f1, #818cf8);
+  background-size: 200% 200%;
+  animation: gradientBG 5s ease infinite;
+  box-shadow: 0 4px 6px -1px rgba(99, 102, 241, 0.2),
+    0 2px 4px -1px rgba(99, 102, 241, 0.1);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+}
+
+.btn-primary::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 9999px;
+  padding: 2px;
+  background: linear-gradient(-45deg, #4338ca, #6366f1, #818cf8);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.btn-primary:hover::before {
+  opacity: 1;
+}
+
+.btn-secondary {
+  @apply relative px-6 py-3 text-indigo-300 rounded-full transition-all duration-300;
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  box-shadow: 0 4px 6px -1px rgba(99, 102, 241, 0.1),
+    0 2px 4px -1px rgba(99, 102, 241, 0.05);
+}
+
+.btn-secondary:hover {
+  background: rgba(99, 102, 241, 0.2);
+  border-color: rgba(99, 102, 241, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(99, 102, 241, 0.2);
+}
+
+.btn-outline {
+  @apply border border-blue-600 text-blue-600 hover:bg-blue-50 focus:ring-4 focus:ring-blue-100 px-6 py-2.5;
+}
+
+/* Card hover effect */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+/* Card hover effects */
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.2);
+  border-color: rgba(99, 102, 241, 0.3);
+}
+
+/* Input styles */
+.input {
+  @apply bg-gray-700 border-gray-600 text-white placeholder-gray-400 focus:ring-blue-500 focus:border-blue-500;
+}
+
+/* Section spacing */
+.section {
+  @apply py-16 md:py-24;
+}
+
+/* Code block styling */
+pre {
+  @apply p-4 rounded-lg overflow-x-auto text-sm;
+  background-color: #282a36;
+  color: #f8f8f2;
+}
+
+code {
+  @apply font-mono;
+}
+
+/* Custom background patterns */
+.bg-pattern {
+  background-color: rgba(30, 41, 59, 0.5);
+  background-image: linear-gradient(
+      45deg,
+      rgba(99, 102, 241, 0.05) 25%,
+      transparent 25%
+    ),
+    linear-gradient(-45deg, rgba(99, 102, 241, 0.05) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(99, 102, 241, 0.05) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(99, 102, 241, 0.05) 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+}
+
+.bg-gradient-primary {
+  background: linear-gradient(-45deg, #1e1b4b, #312e81, #3730a3, #4338ca);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  position: relative;
+}
+
+.bg-gradient-primary::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(99, 102, 241, 0.1),
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite;
+}
+
+.bg-gradient-secondary {
+  background: linear-gradient(-45deg, #1e1b4b, #2e1065, #4c1d95, #5b21b6);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
+
+.bg-gradient-accent {
+  background: linear-gradient(-45deg, #0f766e, #0d9488, #14b8a6, #0d9488);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
+
+/* Glass effect */
+.glass-effect {
+  background: rgba(30, 41, 59, 0.4);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(99, 102, 241, 0.1);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Section backgrounds */
+.section-light {
+  background: radial-gradient(
+      circle at top right,
+      rgba(99, 102, 241, 0.1),
+      transparent 70%
+    ),
+    radial-gradient(
+      circle at bottom left,
+      rgba(99, 102, 241, 0.1),
+      transparent 70%
+    );
+  position: relative;
+}
+
+.section-light::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+      45deg,
+      transparent 48%,
+      rgba(99, 102, 241, 0.05) 50%,
+      transparent 52%
+    ),
+    linear-gradient(
+      -45deg,
+      transparent 48%,
+      rgba(99, 102, 241, 0.05) 50%,
+      transparent 52%
+    );
+  background-size: 30px 30px;
+  pointer-events: none;
+}
+
+.section-gray {
+  background-color: #111827;
+}
+
+.section-blue {
+  background: linear-gradient(-45deg, #1e3a8a, #1e40af, #3b82f6, #2563eb);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
+
+.section-purple {
+  background: linear-gradient(-45deg, #2e1065, #4c1d95, #5b21b6, #6d28d9);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  position: relative;
+}
+
+.section-purple::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 50% 0%,
+    rgba(99, 102, 241, 0.15),
+    transparent 70%
+  );
+}
+
+.section-green {
+  background: linear-gradient(135deg, #065f46 0%, #047857 100%);
+}
+
+/* Custom text colors */
+.text-gradient {
+  background: linear-gradient(-45deg, #60a5fa, #818cf8, #a78bfa);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientBG 5s ease infinite;
+}
+
+.text-glow {
+  text-shadow: 0 0 10px rgba(99, 102, 241, 0.5),
+    0 0 20px rgba(99, 102, 241, 0.3), 0 0 30px rgba(99, 102, 241, 0.1);
+}
+
+/* Card styles */
+.card {
+  @apply bg-slate-800/40 backdrop-blur-md rounded-lg overflow-hidden;
+  border: 1px solid rgba(99, 102, 241, 0.1);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(99, 102, 241, 0.1),
+    transparent
+  );
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+
+.card:hover::before {
+  transform: translateX(100%);
+}
+
+/* Skill icon pulse */
+.skill-icon {
+  position: relative;
+  filter: drop-shadow(0 0 8px rgba(99, 102, 241, 0.3));
+}
+
+.skill-icon::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid rgba(99, 102, 241, 0.3);
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.1);
+  }
+}
+
+/* Floating animation */
+.float-animation {
+  animation: float 6s ease-in-out infinite;
 }
