@@ -6,9 +6,9 @@ export default function Projects() {
     {
       title: "E-Commerce Platform",
       description: "A full-stack e-commerce platform built with Next.js, featuring real-time inventory management and secure payment processing.",
-      image: "/projects/ecommerce.jpg",
-      technologies: ["Next.js", "Node.js", "MongoDB", "Stripe"],
-      link: "/projects/ecommerce"
+      image: "/images/images.jpg",
+      technologies: ["Next.js", "Node.js"],
+      link: "https://github.com/Harshirh/E-Commerce_Wsbsite"
     },
     {
       title: "Task Management App",
@@ -22,7 +22,7 @@ export default function Projects() {
       description: "A modern portfolio website showcasing projects and skills with smooth animations and responsive design.",
       image: "/projects/portfolio.jpg",
       technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
-      link: "/projects/portfolio"
+      link: "https://github.com/Harshirh/Portfolio"
     },
     {
       title: "Blog Platform",
@@ -36,7 +36,7 @@ export default function Projects() {
       description: "A weather application that provides real-time weather updates and forecasts using a third-party API.",
       image: "/projects/weather.jpg",
       technologies: ["React", "OpenWeatherMap API", "CSS"],
-      link: "/projects/weather"
+      link: "https://github.com/Harshirh/weather-app"
     },
     {
       title: "Chat Application",

@@ -55,8 +55,8 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold text-white mb-4">Contact</h4>
             <ul className="space-y-2">
-              <li className="text-gray-400">contact@example.com</li>
-              <li className="text-gray-400">San Francisco, CA</li>
+              <li className="text-gray-400">velichelamalaharshith.com</li>
+              <li className="text-gray-400">Madanapalli, Chittoor</li>
             </ul>
           </div>
         </div>
@@ -68,11 +68,11 @@ export default function Footer() {
           </div>
           <div className="relative flex justify-center">
             <span className="bg-gradient-to-b from-gray-900 via-gray-950 to-black px-4 text-gray-400">
-              © {new Date().getFullYear()} Harhith. All rights reserved.
+              © {new Date().getFullYear()} Harshith. All rights reserved.
             </span>
           </div>
         </div>
       </div>
     </footer>
   );
-} 
+}   
