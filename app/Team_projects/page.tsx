@@ -4,47 +4,25 @@ import Link from 'next/link';
 export default function Projects() {
   const projects = [
     {
-      title: "E-Commerce Platform",
+      title: "Inventory Management System",
       description: "A full-stack e-commerce platform built with Next.js, featuring real-time inventory management and secure payment processing.",
-      image: "/images/images.jpg",
+      image: "",
       technologies: ["Next.js", "Node.js"],
       link: "https://github.com/Harshirh/E-Commerce_Wsbsite"
     },
     {
-      title: "Food Menu Website",
+      title: "T-Summit",
       description: "Built using Next.js and Tailwind CSS with a Node.js–Express backend, the T-Summit website delivers a fast, responsive, and SEO-optimized user experience with modern UI/UX and smooth animations.",
-      image: "/projects/taskmanager.jpg",
+      image: "/images/T-summit.png",
       technologies: ["React", "Firebase", "Nodejs", "Tailwind CSS","Express"],
       link: "/projects/taskmanager"
     },
     {
-      title: "Portfolio Website",
+      title: "Call For Aaruush",
       description: "A modern portfolio website showcasing projects and skills with smooth animations and responsive design.",
-      image: "/images/portfolio.png",
+      image: "/images/CallForAaruush.png",
       technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
       link: "https://github.com/Harshirh/Portfolio"
-    },
-    {
-      title: "KRISHIMITRA - AI Farming Assistant",
-      description: "A blogging platform with user authentication, markdown support, and a rich text editor.",
-      // Corrected: Removed 'public' and added leading slash
-      image: "/images/icon-512.svg", 
-      technologies: ["Gatsby", "GraphQL", "Contentful"],
-      link: "/projects/blog"
-    },
-    {
-      title: "Weather App",
-      description: "A weather application that provides real-time weather updates and forecasts using a third-party API.",
-      image: "/images/weather_image.png",
-      technologies: ["React", "OpenWeatherMap API", "CSS"],
-      link: "https://github.com/Harshirh/weather-app"
-    },
-    {
-      title: "Chat Application",
-      description: "A real-time chat application with user authentication and message history.",
-      image: "/projects/chat.jpg",
-      technologies: ["Socket.io", "Express", "MongoDB"],
-      link: "/projects/chat"
     }
   ];
 
@@ -60,7 +38,7 @@ export default function Projects() {
         <div className="container mx-auto px-4 relative">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-6xl font-bold mb-6 text-gradient text-glow animate-gradient">
-              My Projects
+              My Team Projects
             </h1>
             <p className="text-xl text-gray-300 mb-8 float-animation">
               Explore my latest work and creative endeavors
@@ -128,4 +106,4 @@ export default function Projects() {
       </section>
     </div>
   );
-}
+} 

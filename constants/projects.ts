@@ -6,8 +6,8 @@ export const projects: Project[] = [
     title: 'E-commerce Dashboard',
     shortDescription: 'Admin dashboard for e-commerce management',
     description: 'A comprehensive dashboard for e-commerce store owners to manage products, track sales, and analyze business performance.',
-    imageUrl: '/images/images.jpg',
-    technologies: ['React', 'Next.js', 'Tailwind CSS'],
+    imageUrl: '/images/',
+    technologies: ['React', 'Next.js', 'Tailwind CSS', 'Chart.js'],
     demoUrl: 'e-commerce-website-rosy-nine.vercel.app',
     githubUrl: 'https://github.com/Harshirh/E-Commerce_Wsbsite',
     featured: true

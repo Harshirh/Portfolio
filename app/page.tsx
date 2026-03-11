@@ -1,18 +1,24 @@
 import Link from 'next/link';
+import DarkVeil from '../components/DarkVeil';
 
 export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center py-20 overflow-hidden">
-        {/* Animated background shapes */}
-        <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-500/20 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
-          <div className="absolute top-1/3 right-1/3 w-96 h-96 bg-purple-500/20 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
-          <div className="absolute -bottom-8 left-1/2 w-96 h-96 bg-pink-500/20 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000"></div>
+        {/* Dark Veil background */}
+        <div className="absolute inset-0" style={{ zIndex: 0 }}>
+          <DarkVeil
+            hueShift={0}
+            noiseIntensity={0}
+            scanlineIntensity={0}
+            speed={0.5}
+            scanlineFrequency={0}
+            warpAmount={0}
+          />
         </div>
 
-        <div className="container mx-auto px-4 relative">
+        <div className="container mx-auto px-4 relative" style={{ zIndex: 10 }}>
           <div className="max-w-4xl mx-auto text-center">
             <div className="mb-8 relative">
               <h1 className="text-6xl font-bold mb-6 text-gradient text-glow animate-gradient">

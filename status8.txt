@@ -1,0 +1,47 @@
+﻿interactive rebase in progress; onto b6c0dec
+Last command done (1 command done):
+   pick 4c06ad2 feat: initial commit
+Next command to do (1 remaining command):
+   pick 636a397 Update Navbar, DarkVeil background and project links
+  (use "git rebase --edit-todo" to view and edit)
+You are currently rebasing branch 'master' on 'b6c0dec'.
+  (fix conflicts and then run "git rebase --continue")
+  (use "git rebase --skip" to skip this patch)
+  (use "git rebase --abort" to check out the original branch)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   app/Team_projects/page.tsx
+	modified:   app/about/page.tsx
+	modified:   app/contact/page.tsx
+	modified:   app/globals.css
+	modified:   app/layout.tsx
+	modified:   app/page.tsx
+	modified:   app/projects/page.tsx
+	new file:   components.json
+	new file:   components/DarkVeil.tsx
+	modified:   components/Footer.tsx
+	modified:   components/Navbar.tsx
+	new file:   components/ui/button.tsx
+	modified:   constants/projects.ts
+	new file:   lib/utils.ts
+	new file:   public/images/CallForAaruush.png
+	renamed:    public/images/images.jpg -> public/images/E-Commerce.jpg
+	new file:   public/images/T-summit.png
+	new file:   public/images/icon-512.svg
+	new file:   public/images/portfolio.png
+	new file:   public/images/weather_image.png
+	new file:   public/resume.pdf
+	modified:   tsconfig.json
+
+Unmerged paths:
+  (use "git restore --staged <file>..." to unstage)
+  (use "git add <file>..." to mark resolution)
+	both modified:   package-lock.json
+	both modified:   package.json
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	status.txt
+	status8.txt
+

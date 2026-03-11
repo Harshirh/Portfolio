@@ -53,7 +53,12 @@ export default function About() {
                 user-friendly applications that not only look great but also perform exceptionally well.
               </p>
               <div className="flex gap-4 mt-8">
-                <a href="/resume.pdf" className="btn-primary group inline-flex items-center">
+                {/* Updated with download attribute */}
+                <a 
+                  href="/resume.pdf" 
+                  download="Harshith_Resume.pdf" 
+                  className="btn-primary group inline-flex items-center"
+                >
                   Download Resume
                   <svg className="w-5 h-5 ml-2 transform transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -99,4 +104,4 @@ export default function About() {
       </section>
     </div>
   );
-} 
+}
