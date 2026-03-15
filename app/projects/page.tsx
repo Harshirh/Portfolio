@@ -12,11 +12,12 @@ export default function Projects() {
       link: "https://github.com/Harshirh/E-Commerce_Wsbsite"
     },
     {
-      title: "Food Menu Website",
+      title: "Organisational Dashboard ",
       description: "Built using Next.js and Tailwind CSS with a Node.js–Express backend, the T-Summit website delivers a fast, responsive, and SEO-optimized user experience with modern UI/UX and smooth animations.",
       image: "/images/Project_dashboard.png",
       technologies: ["React", "Firebase", "Nodejs", "Tailwind CSS","Express"],
-      link: "https://github.com/Harshirh/domain-dash-project-hub"
+      link: "https://github.com/Harshirh/domain-dash-project-hub",
+      link1: "https://domain-dash-project-hub.vercel.app"
     },
     {
       title: "Portfolio Website",
