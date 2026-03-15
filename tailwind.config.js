@@ -8,6 +8,11 @@ module.exports = {
     theme: {
       extend: {
         colors: {
+          border: 'var(--border)',
+          input: 'var(--input)',
+          ring: 'var(--ring)',
+          background: 'var(--background)',
+          foreground: 'var(--foreground)',
           primary: {
             50: '#f0f9ff',
             100: '#e0f2fe',

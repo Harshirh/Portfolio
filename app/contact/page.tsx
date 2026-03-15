@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import DarkVeil from '../../components/DarkVeil';
 
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -72,12 +73,23 @@ export default function Contact() {
 
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center justify-center py-20 overflow-hidden">
-        <div className="absolute inset-0">
+        {/* Dark Veil background */}
+        <div className="absolute inset-0" style={{ zIndex: 0 }}>
+          <DarkVeil
+            hueShift={0}
+            noiseIntensity={0}
+            scanlineIntensity={0}
+            speed={0.5}
+            scanlineFrequency={0}
+            warpAmount={0}
+          />
+        </div>
+        <div className="absolute inset-0" style={{ zIndex: 1 }}>
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-500/20 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
           <div className="absolute top-1/3 right-1/3 w-96 h-96 bg-purple-500/20 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
         </div>
 
-        <div className="container mx-auto px-4 relative">
+        <div className="container mx-auto px-4 relative" style={{ zIndex: 10 }}>
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-6xl font-bold mb-6 text-gradient text-glow animate-gradient leading-tight">
               Get in Touch
