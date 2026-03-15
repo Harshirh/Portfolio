@@ -1,0 +1,50 @@
+﻿
+> myportfolio@0.1.0 build
+> next build
+
+   Γû▓ Next.js 15.3.8
+
+   Creating an optimized production build ...
+node.exe : Failed to compile.
+At C:\Program 
+Files\nodejs\npm.ps1:29 
+char:3
++   & $NODE_EXE $NPM_CLI_JS 
+$args
++   
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo           
+   : NotSpecified: (Failed   
+  to compile.:String) [],    
+ RemoteException
+    + FullyQualifiedErrorId  
+   : NativeCommandError
+ 
+
+./components/ui/resizable-nav
+bar.tsx
+Module not found: Can't 
+resolve '@tabler/icons-react'
+
+https://nextjs.org/docs/messa
+ges/module-not-found
+
+Import trace for requested 
+module:
+./components/Navbar.tsx
+
+./components/ui/resizable-nav
+bar.tsx
+Module not found: Can't 
+resolve 'motion/react'
+
+https://nextjs.org/docs/messa
+ges/module-not-found
+
+Import trace for requested 
+module:
+./components/Navbar.tsx
+
+
+> Build failed because of 
+webpack errors
