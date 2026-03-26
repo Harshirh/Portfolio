@@ -6,7 +6,7 @@ export default function About() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center justify-center py-20 overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center py-20 overflow-hidden">
         {/* Dark Veil background */}
         <div className="absolute inset-0" style={{ zIndex: 0 }}>
           <DarkVeil

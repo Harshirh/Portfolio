@@ -1,7 +1,10 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import DarkVeil from '../../components/DarkVeil';
-
+import Masonry from '../../components/Masonry';
+import { motion } from 'framer-motion';
 export default function Projects() {
   const projects = [
     {
@@ -30,7 +33,7 @@ export default function Projects() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center justify-center py-20 overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center py-20 overflow-hidden">
         {/* Dark Veil background */}
         <div className="absolute inset-0" style={{ zIndex: 0 }}>
           <DarkVeil
@@ -62,58 +65,68 @@ export default function Projects() {
       {/* Projects Grid */}
       <section className="py-20 section-light relative">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <div key={index} className="card card-hover group">
-                <div className="relative h-48 bg-gradient-secondary overflow-hidden">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2 text-white group-hover:text-gradient transition-all">
-                    {project.title}
-                  </h3>
-                  <p className="text-gray-400 mb-4">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.technologies.map((tech, techIndex) => (
-                      <span
-                        key={techIndex}
-                        className="px-3 py-1 text-sm bg-indigo-500/10 text-indigo-300 rounded-full"
-                      >
-                        {tech}
-                      </span>
-                    ))}
+          <Masonry 
+            items={projects.map((p, i) => ({ id: i.toString(), ...p, height: 500, img: p.image, url: p.link }))}
+            animateFrom="bottom"
+            stagger={0.1}
+            duration={0.8}
+            scaleOnHover={false}
+            renderItem={(item) => {
+              const project = projects[parseInt(item.id)];
+              return (
+                <div className="card card-hover group h-full w-full flex flex-col">
+                  <div className="relative h-48 bg-gradient-secondary overflow-hidden shrink-0">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                   </div>
-                  <Link
-                    href={project.link}
-                    className="text-indigo-400 hover:text-indigo-300 font-medium inline-flex items-center group"
-                  >
-                    View Project
-                    <svg 
-                      className="w-4 h-4 ml-2 transform transition-transform group-hover:translate-x-2" 
-                      fill="none" 
-                      stroke="currentColor" 
-                      viewBox="0 0 24 24"
-                    >
-                      <path 
-                        strokeLinecap="round" 
-                        strokeLinejoin="round" 
-                        strokeWidth={2} 
-                        d="M9 5l7 7-7 7" 
-                      />
-                    </svg>
-                  </Link>
+                  <div className="p-6 flex flex-col flex-1">
+                    <h3 className="text-xl font-semibold mb-2 text-white group-hover:text-gradient transition-all">
+                      {project.title}
+                    </h3>
+                    <p className="text-gray-400 mb-4 flex-1">
+                      {project.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {project.technologies.map((tech, techIndex) => (
+                        <span
+                          key={techIndex}
+                          className="px-3 py-1 text-sm bg-indigo-500/10 text-indigo-300 rounded-full"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                    {project.link !== '#' && (
+                      <Link
+                        href={project.link}
+                        className="text-indigo-400 hover:text-indigo-300 font-medium inline-flex items-center group w-fit"
+                      >
+                        View Project
+                        <svg 
+                          className="w-4 h-4 ml-2 transform transition-transform group-hover:translate-x-2" 
+                          fill="none" 
+                          stroke="currentColor" 
+                          viewBox="0 0 24 24"
+                        >
+                          <path 
+                            strokeLinecap="round" 
+                            strokeLinejoin="round" 
+                            strokeWidth={2} 
+                            d="M9 5l7 7-7 7" 
+                          />
+                        </svg>
+                      </Link>
+                    )}
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              );
+            }}
+          />
         </div>
       </section>
     </div>
