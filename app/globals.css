@@ -57,15 +57,15 @@
 body {
   background: radial-gradient(
       circle at top left,
-      rgb(var(--background-start-rgb)),
+      rgba(11, 14, 20, 1),
       transparent
     ),
     radial-gradient(
       circle at bottom right,
-      rgb(var(--background-end-rgb)),
+      rgba(22, 26, 33, 1),
       transparent
     ),
-    linear-gradient(to bottom right, #1a1a2e, #16213e, #1a1a2e);
+    #0b0e14;
   min-height: 100vh;
   position: relative;
 }
@@ -135,11 +135,11 @@ body::before {
 
 .btn-primary {
   @apply relative px-6 py-3 text-white rounded-full transition-all duration-300;
-  background: linear-gradient(-45deg, #4338ca, #6366f1, #818cf8);
+  background: linear-gradient(-45deg, #c59aff, #7631fd, #ba88ff);
   background-size: 200% 200%;
   animation: gradientBG 5s ease infinite;
-  box-shadow: 0 4px 6px -1px rgba(99, 102, 241, 0.2),
-    0 2px 4px -1px rgba(99, 102, 241, 0.1);
+  box-shadow: 0 4px 6px -1px rgba(197, 154, 255, 0.2),
+    0 2px 4px -1px rgba(197, 154, 255, 0.1);
 }
 
 .btn-primary:hover {
@@ -192,8 +192,9 @@ body::before {
 /* Card hover effects */
 .card-hover:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.2);
-  border-color: rgba(99, 102, 241, 0.3);
+  background-color: #22262f;
+  box-shadow: 0 10px 40px rgba(197, 154, 255, 0.08); /* neon pulse effect ambient shadow */
+  border-color: rgba(69, 72, 79, 0.3);
 }
 
 /* Input styles */
@@ -254,7 +255,8 @@ code {
 }
 
 .bg-gradient-secondary {
-  background: linear-gradient(-45deg, #1e1b4b, #2e1065, #4c1d95, #5b21b6);
+  /* Secondary gradient using #00e3fd to #00d4ec for a neon cyan effect */
+  background: linear-gradient(-45deg, #1e1b4b, #00d4ec, #00e3fd, #26e6ff);
   background-size: 400% 400%;
   animation: gradientBG 15s ease infinite;
 }
@@ -357,10 +359,12 @@ code {
 
 /* Card styles */
 .card {
-  @apply bg-slate-800/40 backdrop-blur-md rounded-lg overflow-hidden;
-  border: 1px solid rgba(99, 102, 241, 0.1);
+  @apply rounded-lg overflow-hidden;
+  background: rgba(22, 26, 33, 0.7); /* surface-container-low with opacity */
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(69, 72, 79, 0.15); /* ghost border */
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    0 2px 4px -1px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.05);
   position: relative;
 }
 
@@ -371,7 +375,7 @@ code {
   background: linear-gradient(
     to right,
     transparent,
-    rgba(99, 102, 241, 0.1),
+    rgba(197, 154, 255, 0.05),
     transparent
   );
   transform: translateX(-100%);

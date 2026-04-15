@@ -74,12 +74,12 @@ export default function Projects() {
         </div>
 
         <div className="container mx-auto px-4 relative" style={{ zIndex: 10 }}>
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-6xl font-bold mb-6 text-gradient text-glow animate-gradient">
+          <div className="max-w-4xl mx-auto text-center mt-12">
+            <h1 className="text-6xl font-black tracking-tighter mb-6 bg-clip-text text-transparent bg-gradient-to-r from-[#c59aff] to-[#00e3fd] text-glow animate-gradient drop-shadow-[0_0_25px_rgba(197,154,255,0.5)]">
               My Projects
             </h1>
-            <p className="text-xl text-gray-300 mb-8 float-animation">
-              Explore my latest work and creative endeavors
+            <p className="text-xl text-[#a9abb3] mb-8 float-animation font-medium">
+              Explore my latest work and creative endeavors in the void
             </p>
           </div>
         </div>
@@ -107,18 +107,18 @@ export default function Projects() {
                     />
                     <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                   </div>
-                  <div className="p-6 flex flex-col flex-1">
-                    <h3 className="text-xl font-semibold mb-2 text-white group-hover:text-gradient transition-all">
+                  <div className="p-8 flex flex-col flex-1">
+                    <h3 className="text-2xl font-bold mb-3 text-[#ecedf6] group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#c59aff] group-hover:to-[#00e3fd] transition-all">
                       {project.title}
                     </h3>
-                    <p className="text-gray-400 mb-4 flex-1">
+                    <p className="text-[#a9abb3] mb-6 flex-1 text-base leading-relaxed">
                       {project.description}
                     </p>
-                    <div className="flex flex-wrap gap-2 mb-4">
+                    <div className="flex flex-wrap gap-2 mb-6">
                       {project.technologies.map((tech, techIndex) => (
                         <span
                           key={techIndex}
-                          className="px-3 py-1 text-sm bg-indigo-500/10 text-indigo-300 rounded-full"
+                          className="px-3 py-1.5 text-xs font-semibold tracking-wider uppercase bg-[#006875]/20 text-[#00d7f0] rounded-full drop-shadow-[0_0_8px_rgba(0,212,236,0.2)]"
                         >
                           {tech}
                         </span>
@@ -127,11 +127,11 @@ export default function Projects() {
                     {project.link !== '#' && (
                       <Link
                         href={project.link}
-                        className="text-indigo-400 hover:text-indigo-300 font-medium inline-flex items-center group w-fit"
+                        className="text-[#00e3fd] hover:text-[#00d4ec] font-medium inline-flex items-center group w-fit transition-all duration-300 hover:drop-shadow-[0_0_12px_rgba(0,227,253,0.5)]"
                       >
                         View Project
                         <svg 
-                          className="w-4 h-4 ml-2 transform transition-transform group-hover:translate-x-2" 
+                          className="w-4 h-4 ml-2 transform transition-transform duration-300 group-hover:translate-x-2" 
                           fill="none" 
                           stroke="currentColor" 
                           viewBox="0 0 24 24"

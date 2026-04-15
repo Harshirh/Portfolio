@@ -21,20 +21,20 @@ export default function Home() {
         <div className="container mx-auto px-4 relative" style={{ zIndex: 10 }}>
           <div className="max-w-4xl mx-auto text-center">
             <div className="mb-8 relative">
-              <h1 className="text-6xl font-bold mb-6 text-gradient text-glow animate-gradient">
+              <h1 className="text-7xl font-black tracking-tighter mb-6 bg-clip-text text-transparent bg-gradient-to-r from-[#c59aff] to-[#00e3fd] text-glow animate-gradient drop-shadow-[0_0_30px_rgba(197,154,255,0.6)]">
                 Hi, I'm Harshith
               </h1>
-              <p className="text-xl text-gray-300 mb-8 float-animation">
+              <p className="text-2xl text-[#a9abb3] mb-8 float-animation font-medium">
                 A passionate web developer crafting beautiful and functional digital experiences
               </p>
               <div className="flex justify-center gap-6">
-                <Link href="/projects" className="btn-primary group inline-flex items-center">
+                <Link href="/projects" className="btn-primary group inline-flex items-center text-lg shadow-[0_0_20px_rgba(197,154,255,0.4)] hover:shadow-[0_0_35px_rgba(197,154,255,0.6)]">
                   View My Work
                   <svg className="w-5 h-5 ml-2 transform transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
                 </Link>
-                <Link href="/contact" className="btn-secondary inline-flex items-center">
+                <Link href="/contact" className="btn-secondary inline-flex items-center text-lg bg-[#282c36]/10 backdrop-blur-[12px] border border-[rgba(69,72,79,0.3)] hover:bg-[#282c36]/20">
                   Contact Me
                   <svg className="w-5 h-5 ml-2 transform transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
@@ -56,29 +56,29 @@ export default function Home() {
       {/* Featured Projects Section */}
       <section className="py-20 section-light relative">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-16 text-gradient">
+          <h2 className="text-5xl font-black text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-[#c59aff] to-[#00e3fd]">
             Featured Projects
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[1, 2, 3].map((index) => (
-              <div key={index} className="card card-hover group">
-                <div className="relative h-48 bg-gradient-secondary overflow-hidden">
+              <div key={index} className="card card-hover group flex flex-col">
+                <div className="relative h-48 bg-gradient-secondary overflow-hidden shrink-0">
                   <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2 text-white group-hover:text-gradient transition-all">
+                <div className="p-8 flex flex-col flex-1">
+                  <h3 className="text-2xl font-bold mb-3 text-[#ecedf6] group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#c59aff] group-hover:to-[#00e3fd] transition-all">
                     Project {index}
                   </h3>
-                  <p className="text-gray-400 mb-4">
+                  <p className="text-[#a9abb3] mb-6 flex-1 text-base leading-relaxed">
                     A brief description of the project and its key features.
                   </p>
                   <Link
                     href="/projects"
-                    className="text-indigo-400 hover:text-indigo-300 font-medium inline-flex items-center group"
+                    className="text-[#00e3fd] hover:text-[#00d4ec] font-medium inline-flex items-center group w-fit transition-all duration-300 hover:drop-shadow-[0_0_12px_rgba(0,227,253,0.5)]"
                   >
                     Learn More 
                     <svg 
-                      className="w-4 h-4 ml-2 transform transition-transform group-hover:translate-x-2" 
+                      className="w-4 h-4 ml-2 transform transition-transform duration-300 group-hover:translate-x-2" 
                       fill="none" 
                       stroke="currentColor" 
                       viewBox="0 0 24 24"
@@ -101,7 +101,7 @@ export default function Home() {
       {/* Skills Preview Section */}
       <section className="py-20 section-purple relative">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-16 text-gradient">
+          <h2 className="text-5xl font-black text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-[#c59aff] to-[#00e3fd]">
             What I Do
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -135,12 +135,14 @@ export default function Home() {
               }
             ].map((skill, index) => (
               <div key={index} className="card card-hover group">
-                <div className="p-8 text-center">
-                  {skill.icon}
-                  <h3 className="text-xl font-semibold mb-4 text-white group-hover:text-gradient transition-all">
+                <div className="p-8 text-center flex flex-col items-center justify-center">
+                  <div className="mb-6 drop-shadow-[0_0_12px_rgba(197,154,255,0.4)]">
+                    {skill.icon}
+                  </div>
+                  <h3 className="text-2xl font-bold mb-4 text-[#ecedf6] group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#c59aff] group-hover:to-[#00e3fd] transition-all">
                     {skill.title}
                   </h3>
-                  <p className="text-gray-400 group-hover:text-gray-300 transition-colors">
+                  <p className="text-[#a9abb3] group-hover:text-gray-300 transition-colors text-base leading-relaxed">
                     {skill.description}
                   </p>
                 </div>

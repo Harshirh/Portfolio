@@ -24,12 +24,12 @@ export default function About() {
         </div>
 
         <div className="container mx-auto px-4 relative" style={{ zIndex: 10 }}>
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-6xl font-bold mb-6 text-gradient text-glow animate-gradient">
+          <div className="max-w-4xl mx-auto text-center mt-12">
+            <h1 className="text-6xl font-black tracking-tighter mb-6 bg-clip-text text-transparent bg-gradient-to-r from-[#c59aff] to-[#00e3fd] text-glow animate-gradient drop-shadow-[0_0_25px_rgba(197,154,255,0.5)]">
               About Me
             </h1>
-            <p className="text-xl text-gray-300 mb-8 float-animation">
-              Get to know more about my journey and expertise
+            <p className="text-xl text-[#a9abb3] mb-8 float-animation font-medium">
+              Get to know more about my journey and expertise in the digital realm
             </p>
           </div>
         </div>
@@ -52,15 +52,15 @@ export default function About() {
               </div>
             </div>
             <div className="space-y-6">
-              <h2 className="text-4xl font-bold text-gradient mb-6">
+              <h2 className="text-4xl font-black mb-6 bg-clip-text text-transparent bg-gradient-to-r from-[#c59aff] to-[#00e3fd]">
                 My Journey
               </h2>
-              <p className="text-gray-300 leading-relaxed">
+              <p className="text-[#a9abb3] text-lg leading-relaxed">
                 I'm a passionate web developer with a keen eye for creating beautiful and functional digital experiences. 
                 My journey in web development started with a curiosity for how things work on the internet, 
                 which led me to dive deep into the world of programming and design.
               </p>
-              <p className="text-gray-300 leading-relaxed">
+              <p className="text-[#a9abb3] text-lg leading-relaxed">
                 With expertise in modern web technologies and frameworks, I focus on building responsive, 
                 user-friendly applications that not only look great but also perform exceptionally well.
               </p>
@@ -85,7 +85,7 @@ export default function About() {
       {/* Skills Section */}
       <section className="py-20 section-purple relative">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-16 text-gradient">
+          <h2 className="text-4xl font-black text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-[#c59aff] to-[#00e3fd]">
             Technical Skills
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
@@ -100,12 +100,12 @@ export default function About() {
               { name: "MySQL", level: "70%" }
             ].map((skill, index) => (
               <div key={index} className="card card-hover group p-6">
-                <h3 className="text-xl font-semibold mb-4 text-white group-hover:text-gradient transition-all">
+                <h3 className="text-xl font-bold mb-4 text-[#ecedf6] group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#c59aff] group-hover:to-[#00e3fd] transition-all">
                   {skill.name}
                 </h3>
-                <div className="w-full bg-gray-700 rounded-full h-2.5">
+                <div className="w-full bg-[#10131a] rounded-full h-2.5">
                   <div 
-                    className="bg-gradient-to-r from-indigo-500 to-purple-500 h-2.5 rounded-full transition-all duration-500"
+                    className="bg-gradient-to-r from-[#7631fd] to-[#00d4ec] h-2.5 rounded-full transition-all duration-500 drop-shadow-[0_0_8px_rgba(0,212,236,0.6)]"
                     style={{ width: skill.level }}
                   ></div>
                 </div>

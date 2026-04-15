@@ -90,11 +90,11 @@ export default function Contact() {
         </div>
 
         <div className="container mx-auto px-4 relative" style={{ zIndex: 10 }}>
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-6xl font-bold mb-6 text-gradient text-glow animate-gradient leading-tight">
+          <div className="max-w-4xl mx-auto text-center mt-12">
+            <h1 className="text-7xl font-black tracking-tighter mb-6 bg-clip-text text-transparent bg-gradient-to-r from-[#c59aff] to-[#00e3fd] text-glow animate-gradient drop-shadow-[0_0_30px_rgba(197,154,255,0.6)] leading-tight">
               Get in Touch
             </h1>
-            <p className="text-xl text-gray-300 mb-8 float-animation">
+            <p className="text-2xl text-[#a9abb3] mb-8 float-animation font-medium">
               Let's discuss your next project or opportunity
             </p>
           </div>
@@ -117,7 +117,7 @@ export default function Contact() {
                       id="name"
                       name="name"
                       required
-                      className="w-full px-4 py-3 rounded-lg bg-gray-800/50 border border-gray-700 text-white placeholder-gray-400 focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all outline-none"
+                      className="w-full px-4 py-3 rounded-lg bg-[#10131a] border border-[#22262f] text-white placeholder-[#52555c] focus:ring-2 focus:ring-[#00e3fd] focus:border-transparent transition-all outline-none"
                       placeholder="Your name"
                     />
                   </div>
@@ -130,7 +130,7 @@ export default function Contact() {
                       id="email"
                       name="email"
                       required
-                      className="w-full px-4 py-3 rounded-lg bg-gray-800/50 border border-gray-700 text-white placeholder-gray-400 focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all outline-none"
+                      className="w-full px-4 py-3 rounded-lg bg-[#10131a] border border-[#22262f] text-white placeholder-[#52555c] focus:ring-2 focus:ring-[#00e3fd] focus:border-transparent transition-all outline-none"
                       placeholder="your@email.com"
                     />
                   </div>
@@ -144,7 +144,7 @@ export default function Contact() {
                     id="subject"
                     name="subject"
                     required
-                    className="w-full px-4 py-3 rounded-lg bg-gray-800/50 border border-gray-700 text-white placeholder-gray-400 focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all outline-none"
+                    className="w-full px-4 py-3 rounded-lg bg-[#10131a] border border-[#22262f] text-white placeholder-[#52555c] focus:ring-2 focus:ring-[#00e3fd] focus:border-transparent transition-all outline-none"
                     placeholder="What's this about?"
                   />
                 </div>
@@ -157,7 +157,7 @@ export default function Contact() {
                     name="message"
                     required
                     rows={6}
-                    className="w-full px-4 py-3 rounded-lg bg-gray-800/50 border border-gray-700 text-white placeholder-gray-400 focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all outline-none"
+                    className="w-full px-4 py-3 rounded-lg bg-[#10131a] border border-[#22262f] text-white placeholder-[#52555c] focus:ring-2 focus:ring-[#00e3fd] focus:border-transparent transition-all outline-none"
                     placeholder="Your message..."
                   ></textarea>
                 </div>
@@ -200,7 +200,7 @@ export default function Contact() {
                 title: "Email",
                 content: "velichelamalaharshith@gmail.com",
                 icon: (
-                  <svg className="w-8 h-8 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-8 h-8 text-[#00d7f0] drop-shadow-[0_0_8px_rgba(0,215,240,0.5)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 )
@@ -209,7 +209,7 @@ export default function Contact() {
                 title: "Location",
                 content: "Chennai, India",
                 icon: (
-                  <svg className="w-8 h-8 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-8 h-8 text-[#00d7f0] drop-shadow-[0_0_8px_rgba(0,215,240,0.5)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
@@ -220,7 +220,7 @@ export default function Contact() {
                 content: "LinkedIn Profile",
                 link: "https://www.linkedin.com/in/harshith-velichelamala-b397b4287",
                 icon: (
-                  <svg className="w-8 h-8 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-8 h-8 text-[#00d7f0] drop-shadow-[0_0_8px_rgba(0,215,240,0.5)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
                   </svg>
                 )
@@ -228,15 +228,15 @@ export default function Contact() {
             ].map((item, index) => (
               <div key={index} className="card card-hover group p-6 text-center">
                 <div className="mb-4 flex justify-center">{item.icon}</div>
-                <h3 className="text-xl font-semibold mb-2 text-white group-hover:text-gradient transition-all">
+                <h3 className="text-xl font-bold mb-2 text-[#ecedf6] group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#c59aff] group-hover:to-[#00e3fd] transition-all">
                   {item.title}
                 </h3>
                 {item.link ? (
-                  <a href={item.link} target="_blank" rel="noopener noreferrer" className="text-gray-400 group-hover:text-gray-300 transition-colors break-all">
+                  <a href={item.link} target="_blank" rel="noopener noreferrer" className="text-[#a9abb3] group-hover:text-[#00e3fd] transition-colors break-all">
                     {item.content}
                   </a>
                 ) : (
-                  <p className="text-gray-400 group-hover:text-gray-300 transition-colors">
+                  <p className="text-[#a9abb3] group-hover:text-gray-300 transition-colors">
                     {item.content}
                   </p>
                 )}
