@@ -25,7 +25,7 @@ export default function About() {
 
         <div className="container mx-auto px-4 relative" style={{ zIndex: 10 }}>
           <div className="max-w-4xl mx-auto text-center mt-12">
-            <h1 className="text-6xl font-black tracking-tighter mb-6 bg-clip-text text-transparent bg-gradient-to-r from-[#c59aff] to-[#00e3fd] text-glow animate-gradient drop-shadow-[0_0_25px_rgba(197,154,255,0.5)]">
+            <h1 className="text-8xl font-black tracking-tighter mb-8 bg-clip-text text-transparent bg-gradient-to-r from-[#c59aff] to-[#00e3fd] text-glow animate-gradient drop-shadow-[0_0_25px_rgba(197,154,255,0.5)]">
               About Me
             </h1>
             <p className="text-xl text-[#a9abb3] mb-8 float-animation font-medium">
@@ -67,7 +67,7 @@ export default function About() {
               <div className="flex gap-4 mt-8">
                 {/* Updated with download attribute */}
                 <a 
-                  href="/resume.pdf" 
+                  href="/VELICHALAMALA HARSHITH REDDY_Resume.pdf" 
                   download="Harshith_Resume.pdf" 
                   className="btn-primary group inline-flex items-center"
                 >
