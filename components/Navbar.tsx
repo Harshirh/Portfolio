@@ -34,7 +34,7 @@ const SiteNavbar = () => {
           </Link>
           <NavItems items={navItems} />
           <div className="flex items-center gap-4">
-            <NavbarButton variant="secondary" as="a" href="/resume.pdf" target="_blank">
+            <NavbarButton variant="secondary" as="a" href="/VELICHALAMALA HARSHITH REDDY_Resume.pdf" target="_blank">
               Resume
             </NavbarButton>
             <NavbarButton variant="primary" as="a" href="/contact">
@@ -75,7 +75,7 @@ const SiteNavbar = () => {
                 variant="secondary"
                 className="w-full text-center block"
                 as="a"
-                href="/resume.pdf" 
+                href="/VELICHALAMALA HARSHITH REDDY_Resume.pdf" 
                 target="_blank"
               >
                 Resume
